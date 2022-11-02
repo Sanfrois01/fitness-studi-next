@@ -1,7 +1,21 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import { UserContextProvider } from '../context/UserContext';
+import React , {useContext} from "react";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+
+export default function MyApp({ 
+  Component, 
+  pageProps : { ...pageProps}
+ }) {
+
+return (
+  <>  
+      <UserContextProvider>
+          <Component {...pageProps} />
+      </UserContextProvider>
+  </>
+  )
 }
 
-export default MyApp
