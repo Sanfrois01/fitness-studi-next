@@ -7,8 +7,11 @@ import Footer from "../../components/footer";
 export default function Partner({partner}) {
 
   const structure = Object.values(partner.structures)
+  console.log(partner)
   const {currentUser } = useContext(UserContext);
   const router = useRouter()
+
+  console.log(partner);
 
   const protectedRoutes =  async () => {
       if (!currentUser){
@@ -57,7 +60,7 @@ export default function Partner({partner}) {
 }
 
 export const getStaticPaths = async () => {
-  const url = `${process.env.FITNESS_API}/partners`;
+  const url = `${process.env.FITNESS_API}/partners/`;
   const https = require('https');
   const httpsAgent = new https.Agent({
     rejectUnauthorized: false,
@@ -85,7 +88,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({params}) => {
-  const url = `${process.env.FITNESS_API}/partners`+params.id;
+  const url = `${process.env.FITNESS_API}/partners/`+params.id;
   const https = require('https');
   const httpsAgent = new https.Agent({
     rejectUnauthorized: false,

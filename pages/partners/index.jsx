@@ -92,7 +92,7 @@ export default  function Partners({partners}) {
 }
 
 export const getStaticProps = async () => {
-  const url = `${process.env.FITNESS_API}/partners`;
+  const url = `${process.env.FITNESS_API}/partners/`;
   const https = require('https');
   const httpsAgent = new https.Agent({
     rejectUnauthorized: false,

@@ -77,7 +77,7 @@ export default function structures({structures}) {
 }
 
 export const getStaticProps = async () => {
-  const url = `${process.env.FITNESS_API}/structures`;
+  const url = `${process.env.FITNESS_API}/structures/`;
   const https = require('https');
   const httpsAgent = new https.Agent({
     rejectUnauthorized: false,
