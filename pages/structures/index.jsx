@@ -34,9 +34,9 @@ export default function structures({structures}) {
 
     <div className="d-flex justify-content-center py-5 ">
       <form className="d-flex">
-          <input  className="form-control me-3" 
+          <input  className="form-control me-4" 
                   type="search" 
-                  placeholder="Rechercher un Partenaires" 
+                  placeholder="Rechercher une Structure" 
                   aria-label="Search"
                   onChange={ handleSearchStructures }/>
       </form>
@@ -77,7 +77,7 @@ export default function structures({structures}) {
 }
 
 export const getStaticProps = async () => {
-  const url = "https://localhost:8000/api/structures";
+  const url = `${process.env.FITNESS_API}/structures`;
   const https = require('https');
   const httpsAgent = new https.Agent({
     rejectUnauthorized: false,

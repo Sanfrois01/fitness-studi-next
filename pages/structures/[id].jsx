@@ -65,7 +65,7 @@ export default function Structure({structure}) {
 }
 
 export const getStaticPaths = async () => {
-  const url = "https://localhost:8000/api/structure_permissions/?populate=%2A";
+  const url = `${process.env.FITNESS_API}/structure_permissions`;
   const https = require('https');
   const httpsAgent = new https.Agent({
     rejectUnauthorized: false,
@@ -93,7 +93,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({params}) => {
-  const url = "https://localhost:8000/api/structures/"+params.id;
+  const url = `${process.env.FITNESS_API}/structure_permissions`+params.id;
   const https = require('https');
   const httpsAgent = new https.Agent({
     rejectUnauthorized: false,

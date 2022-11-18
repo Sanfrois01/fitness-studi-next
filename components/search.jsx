@@ -19,7 +19,7 @@ console.log()
 
   return (
     <>
-    <div className="d-flex justify-content-center py-5 ">
+    <div className="d-flex justify-content-center  ">
       <form className="d-flex">
           <input  className="form-control me-3" 
                   type="search" 
